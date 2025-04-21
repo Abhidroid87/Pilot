@@ -46,3 +46,13 @@
 2025-04-21 11:30:02,852 - EdgeProfileManager - INFO - Using Edge User Data directory: C:\Users\LENOVO\AppData\Local\Microsoft\Edge\User Data
 2025-04-21 11:30:04,987 - EdgeProfileManager - INFO - History saved to profile_history.json
 2025-04-21 11:30:04,987 - EdgeProfileManager - INFO - Opened Edge with profile: Work
+2025-04-21 11:54:31,106 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 12:00:17,104 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 12:00:21,143 - EdgeProfileManager - WARNING - Profile 'Profile 3' does not exist
+2025-04-21 12:00:56,506 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 12:01:00,567 - EdgeProfileManager - INFO - Profiles saved to edge_profiles.json
+2025-04-21 12:01:00,569 - EdgeProfileManager - INFO - History saved to profile_history.json
+2025-04-21 12:01:00,569 - EdgeProfileManager - INFO - Removed profile: Work
+2025-04-21 12:01:38,817 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 12:06:02,497 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 12:06:06,574 - EdgeProfileManager - ERROR - Profile 'Work' does not exist

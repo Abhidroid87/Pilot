@@ -43,6 +43,9 @@ python edge_automation_cli.py list
 # Open a profile
 python edge_automation_cli.py open "Work"
 
+# Remove a profile
+python edge_automation_cli.py remove "Work"
+
 # Open multiple profiles simultaneously
 python edge_automation_cli.py open-multiple "Work" "Personal" --delay 2
 
