@@ -1,0 +1,38 @@
+2025-04-21 09:38:50,658 - EdgeProfileManager - INFO - Profiles file edge_profiles.json not found. Creating new profiles data.
+2025-04-21 09:38:50,659 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
+2025-04-21 09:38:58,401 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 09:40:36,798 - EdgeProfileManager - INFO - Profiles file edge_profiles.json not found. Creating new profiles data.
+2025-04-21 09:40:36,798 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
+2025-04-21 09:40:41,270 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 09:43:16,966 - EdgeProfileManager - INFO - Profiles file edge_profiles.json not found. Creating new profiles data.
+2025-04-21 09:43:16,968 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
+2025-04-21 09:43:22,516 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 09:43:26,572 - EdgeProfileManager - INFO - Profiles saved to edge_profiles.json
+2025-04-21 09:43:26,572 - EdgeProfileManager - INFO - Added new profile: Personal
+2025-04-21 09:43:48,755 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
+2025-04-21 09:43:53,169 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 09:43:57,219 - EdgeProfileManager - WARNING - Profile 'Personal' already exists
+2025-04-21 09:45:16,701 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
+2025-04-21 09:45:21,088 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 09:45:25,130 - EdgeProfileManager - ERROR - Profile 'Work' does not exist
+2025-04-21 09:46:32,303 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
+2025-04-21 09:46:36,713 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 09:46:40,755 - EdgeProfileManager - ERROR - Profile 'Work' does not exist
+2025-04-21 09:47:59,726 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
+2025-04-21 09:48:04,081 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 09:48:08,175 - EdgeProfileManager - ERROR - Profile 'Profile 2' does not exist
+2025-04-21 09:50:32,828 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
+2025-04-21 09:50:37,266 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 09:50:41,327 - EdgeProfileManager - WARNING - Profile 'Personal' already exists
+2025-04-21 09:52:03,246 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
+2025-04-21 09:52:07,718 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 09:53:09,127 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
+2025-04-21 09:53:13,493 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 09:53:17,557 - EdgeProfileManager - INFO - Using auto-generated profile path: Profile 3
+2025-04-21 09:53:17,560 - EdgeProfileManager - INFO - Profiles saved to edge_profiles.json
+2025-04-21 09:53:17,561 - EdgeProfileManager - INFO - Added new profile: Work
+2025-04-21 09:53:35,490 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
+2025-04-21 09:53:39,742 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 09:53:45,948 - EdgeProfileManager - INFO - History saved to profile_history.json
+2025-04-21 09:53:45,949 - EdgeProfileManager - INFO - Opened Edge with profile: Personal
+2025-04-21 09:58:16,476 - EdgeProfileManager - INFO - Edge WebDriver is available and working
