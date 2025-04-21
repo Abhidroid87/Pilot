@@ -36,3 +36,13 @@
 2025-04-21 09:53:45,948 - EdgeProfileManager - INFO - History saved to profile_history.json
 2025-04-21 09:53:45,949 - EdgeProfileManager - INFO - Opened Edge with profile: Personal
 2025-04-21 09:58:16,476 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 10:08:45,498 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 10:08:49,548 - EdgeProfileManager - WARNING - Profile 'Work' already exists
+2025-04-21 11:26:29,540 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 11:26:33,605 - EdgeProfileManager - INFO - Using Edge User Data directory: C:\Users\LENOVO\AppData\Local\Microsoft\Edge\User Data
+2025-04-21 11:26:35,796 - EdgeProfileManager - INFO - History saved to profile_history.json
+2025-04-21 11:26:35,796 - EdgeProfileManager - INFO - Opened Edge with profile: Work
+2025-04-21 11:29:58,787 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-21 11:30:02,852 - EdgeProfileManager - INFO - Using Edge User Data directory: C:\Users\LENOVO\AppData\Local\Microsoft\Edge\User Data
+2025-04-21 11:30:04,987 - EdgeProfileManager - INFO - History saved to profile_history.json
+2025-04-21 11:30:04,987 - EdgeProfileManager - INFO - Opened Edge with profile: Work
