@@ -1,4 +1,4 @@
-# Edge Profile Automation
+# Profile Automation
 
 This tool automates Microsoft Edge browser profile management, allowing you to:
 - Open multiple Edge profiles simultaneously
