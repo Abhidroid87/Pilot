@@ -1,58 +1,76 @@
-2025-04-21 09:38:50,658 - EdgeProfileManager - INFO - Profiles file edge_profiles.json not found. Creating new profiles data.
-2025-04-21 09:38:50,659 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
-2025-04-21 09:38:58,401 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 09:40:36,798 - EdgeProfileManager - INFO - Profiles file edge_profiles.json not found. Creating new profiles data.
-2025-04-21 09:40:36,798 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
-2025-04-21 09:40:41,270 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 09:43:16,966 - EdgeProfileManager - INFO - Profiles file edge_profiles.json not found. Creating new profiles data.
-2025-04-21 09:43:16,968 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
-2025-04-21 09:43:22,516 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 09:43:26,572 - EdgeProfileManager - INFO - Profiles saved to edge_profiles.json
-2025-04-21 09:43:26,572 - EdgeProfileManager - INFO - Added new profile: Personal
-2025-04-21 09:43:48,755 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
-2025-04-21 09:43:53,169 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 09:43:57,219 - EdgeProfileManager - WARNING - Profile 'Personal' already exists
-2025-04-21 09:45:16,701 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
-2025-04-21 09:45:21,088 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 09:45:25,130 - EdgeProfileManager - ERROR - Profile 'Work' does not exist
-2025-04-21 09:46:32,303 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
-2025-04-21 09:46:36,713 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 09:46:40,755 - EdgeProfileManager - ERROR - Profile 'Work' does not exist
-2025-04-21 09:47:59,726 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
-2025-04-21 09:48:04,081 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 09:48:08,175 - EdgeProfileManager - ERROR - Profile 'Profile 2' does not exist
-2025-04-21 09:50:32,828 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
-2025-04-21 09:50:37,266 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 09:50:41,327 - EdgeProfileManager - WARNING - Profile 'Personal' already exists
-2025-04-21 09:52:03,246 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
-2025-04-21 09:52:07,718 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 09:53:09,127 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
-2025-04-21 09:53:13,493 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 09:53:17,557 - EdgeProfileManager - INFO - Using auto-generated profile path: Profile 3
-2025-04-21 09:53:17,560 - EdgeProfileManager - INFO - Profiles saved to edge_profiles.json
-2025-04-21 09:53:17,561 - EdgeProfileManager - INFO - Added new profile: Work
-2025-04-21 09:53:35,490 - EdgeProfileManager - INFO - History file profile_history.json not found. Creating new history data.
-2025-04-21 09:53:39,742 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 09:53:45,948 - EdgeProfileManager - INFO - History saved to profile_history.json
-2025-04-21 09:53:45,949 - EdgeProfileManager - INFO - Opened Edge with profile: Personal
-2025-04-21 09:58:16,476 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 10:08:45,498 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 10:08:49,548 - EdgeProfileManager - WARNING - Profile 'Work' already exists
-2025-04-21 11:26:29,540 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 11:26:33,605 - EdgeProfileManager - INFO - Using Edge User Data directory: C:\Users\LENOVO\AppData\Local\Microsoft\Edge\User Data
-2025-04-21 11:26:35,796 - EdgeProfileManager - INFO - History saved to profile_history.json
-2025-04-21 11:26:35,796 - EdgeProfileManager - INFO - Opened Edge with profile: Work
-2025-04-21 11:29:58,787 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 11:30:02,852 - EdgeProfileManager - INFO - Using Edge User Data directory: C:\Users\LENOVO\AppData\Local\Microsoft\Edge\User Data
-2025-04-21 11:30:04,987 - EdgeProfileManager - INFO - History saved to profile_history.json
-2025-04-21 11:30:04,987 - EdgeProfileManager - INFO - Opened Edge with profile: Work
-2025-04-21 11:54:31,106 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 12:00:17,104 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 12:00:21,143 - EdgeProfileManager - WARNING - Profile 'Profile 3' does not exist
-2025-04-21 12:00:56,506 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 12:01:00,567 - EdgeProfileManager - INFO - Profiles saved to edge_profiles.json
-2025-04-21 12:01:00,569 - EdgeProfileManager - INFO - History saved to profile_history.json
-2025-04-21 12:01:00,569 - EdgeProfileManager - INFO - Removed profile: Work
-2025-04-21 12:01:38,817 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 12:06:02,497 - EdgeProfileManager - INFO - Edge WebDriver is available and working
-2025-04-21 12:06:06,574 - EdgeProfileManager - ERROR - Profile 'Work' does not exist
+2025-04-23 16:08:10,734 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-23 16:08:17,257 - EdgeProfileManager - INFO - History saved to profile_history.json
+2025-04-23 16:08:17,257 - EdgeProfileManager - INFO - Opened Edge with profile: Profile10
+2025-04-23 16:08:38,675 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)': /session/0ca39c4fcef6c88620796ce384ccc103
+2025-04-23 16:08:42,761 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023F3CD14170>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/0ca39c4fcef6c88620796ce384ccc103
+2025-04-23 16:08:46,819 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023F3CD16630>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/0ca39c4fcef6c88620796ce384ccc103
+2025-04-23 16:09:39,875 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-23 19:56:13,949 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-23 19:57:20,342 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-23 19:57:24,406 - EdgeProfileManager - INFO - Processing 2 profiles in 1 batches of 2
+2025-04-23 19:57:24,406 - EdgeProfileManager - INFO - Processing batch 1/1 - Profiles: ['Personal', 'Profile10']
+2025-04-23 19:57:26,591 - EdgeProfileManager - INFO - History saved to profile_history.json
+2025-04-23 19:57:26,591 - EdgeProfileManager - INFO - Opened Edge with profile: Personal
+2025-04-23 19:57:26,591 - EdgeProfileManager - INFO - Successfully opened profile: Personal
+2025-04-23 19:57:33,962 - EdgeProfileManager - ERROR - Failed to open Edge with profile 'Profile10': Message: session not created: Microsoft Edge failed to start: crashed.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from msedge location C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe is no longer running, so msedgedriver is assuming that msedge has crashed.)
+Stacktrace:
+	GetHandleVerifier [0x00007FF720ED79C5+24981]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF720E2ABD0+444192]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF72115E0AA+2011274]
+	(No symbol) [0x00007FF720C34E18]
+	(No symbol) [0x00007FF720C3036F]
+	(No symbol) [0x00007FF720C753D5]
+	(No symbol) [0x00007FF720C7443B]
+	(No symbol) [0x00007FF720C68E03]
+	(No symbol) [0x00007FF720C3D686]
+	(No symbol) [0x00007FF720C3CB92]
+	(No symbol) [0x00007FF720C3D4B3]
+	(No symbol) [0x00007FF720D3900D]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF720D46943+41539]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF720D3FC79+13689]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF720FBA00A+290794]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF720E37CA1+497649]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF720E30B24+468596]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF720E30C73+468931]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF720E22D86+411862]
+	BaseThreadInitThunk [0x00007FFC8405E8D7+23]
+	RtlUserThreadStart [0x00007FFC84FF14FC+44]
+
+2025-04-23 19:57:33,962 - EdgeProfileManager - ERROR - Failed to open profile 'Profile10': Message: session not created: Microsoft Edge failed to start: crashed.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from msedge location C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe is no longer running, so msedgedriver is assuming that msedge has crashed.)
+Stacktrace:
+	GetHandleVerifier [0x00007FF720ED79C5+24981]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF720E2ABD0+444192]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF72115E0AA+2011274]
+	(No symbol) [0x00007FF720C34E18]
+	(No symbol) [0x00007FF720C3036F]
+	(No symbol) [0x00007FF720C753D5]
+	(No symbol) [0x00007FF720C7443B]
+	(No symbol) [0x00007FF720C68E03]
+	(No symbol) [0x00007FF720C3D686]
+	(No symbol) [0x00007FF720C3CB92]
+	(No symbol) [0x00007FF720C3D4B3]
+	(No symbol) [0x00007FF720D3900D]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF720D46943+41539]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF720D3FC79+13689]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF720FBA00A+290794]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF720E37CA1+497649]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF720E30B24+468596]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF720E30C73+468931]
+	Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF720E22D86+411862]
+	BaseThreadInitThunk [0x00007FFC8405E8D7+23]
+	RtlUserThreadStart [0x00007FFC84FF14FC+44]
+
+2025-04-23 19:57:38,041 - EdgeProfileManager - INFO - Batch processing completed:
+2025-04-23 19:57:38,041 - EdgeProfileManager - INFO - - Successful: 1
+2025-04-23 19:57:38,041 - EdgeProfileManager - INFO - - Failed: 1
+2025-04-23 19:57:38,041 - EdgeProfileManager - INFO - - Skipped: 0
+2025-04-23 19:58:33,475 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)': /session/25e490c71c5a7d7976d3f56fcaf389c4
+2025-04-23 19:58:37,552 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027E989D7620>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/25e490c71c5a7d7976d3f56fcaf389c4
+2025-04-23 19:58:41,595 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027E989D7500>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/25e490c71c5a7d7976d3f56fcaf389c4
+2025-04-23 19:58:49,700 - EdgeProfileManager - INFO - Closed profile: Personal
+2025-04-23 20:00:35,851 - EdgeProfileManager - INFO - Edge WebDriver is available and working
+2025-04-23 20:04:30,892 - EdgeProfileManager - INFO - Edge WebDriver is available and working

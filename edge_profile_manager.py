@@ -27,18 +27,21 @@ logger = logging.getLogger("EdgeProfileManager")
 class EdgeProfileManager:
     """Manages Microsoft Edge browser profiles for automation."""
 
-    def __init__(self, profiles_file="edge_profiles.json", history_file="profile_history.json"):
+    def __init__(self, profiles_file="edge_profiles.json", history_file="profile_history.json", batch_config_file="batch_config.json"):
         """
         Initialize the Edge Profile Manager.
 
         Args:
             profiles_file (str): Path to the JSON file storing profile information
             history_file (str): Path to the JSON file storing profile access history
+            batch_config_file (str): Path to the JSON file storing batch configurations
         """
         self.profiles_file = profiles_file
         self.history_file = history_file
+        self.batch_config_file = batch_config_file
         self.profiles = self._load_profiles()
         self.history = self._load_history()
+        self.batch_config = self._load_batch_config()
         self.active_drivers = {}
 
         # Ensure Edge WebDriver is available
@@ -97,6 +100,58 @@ class EdgeProfileManager:
         with open(self.history_file, 'w') as f:
             json.dump(self.history, f, indent=4)
         logger.info(f"History saved to {self.history_file}")
+
+    def _load_batch_config(self):
+        """Load batch configuration from JSON file."""
+        try:
+            with open(self.batch_config_file, 'r') as f:
+                return json.load(f)
+        except FileNotFoundError:
+            logger.warning(f"Batch config file not found: {self.batch_config_file}")
+            return {}
+        except json.JSONDecodeError:
+            logger.error(f"Invalid JSON in batch config file: {self.batch_config_file}")
+            return {}
+
+    def save_batch_config(self):
+        """Save batch configuration to JSON file."""
+        with open(self.batch_config_file, 'w') as f:
+            json.dump(self.batch_config, f, indent=4)
+
+    def get_batch_names(self):
+        """Get list of available batch names."""
+        return list(self.batch_config.keys())
+
+    def add_batch(self, batch_name, profiles, batch_size=5, profile_delay=2, batch_delay=30):
+        """Add or update a batch configuration."""
+        self.batch_config[batch_name] = {
+            "profiles": profiles,
+            "batch_size": batch_size,
+            "profile_delay": profile_delay,
+            "batch_delay": batch_delay
+        }
+        self.save_batch_config()
+
+    def remove_batch(self, batch_name):
+        """Remove a batch configuration."""
+        if batch_name in self.batch_config:
+            del self.batch_config[batch_name]
+            self.save_batch_config()
+            return True
+        return False
+
+    def run_batch(self, batch_name):
+        """Run a specific batch configuration."""
+        if batch_name not in self.batch_config:
+            raise ValueError(f"Batch '{batch_name}' not found in configuration")
+
+        config = self.batch_config[batch_name]
+        return self.open_profiles_in_batches(
+            profile_names=config["profiles"],
+            batch_size=config["batch_size"],
+            delay_between_profiles=config["profile_delay"],
+            delay_between_batches=config["batch_delay"]
+        )
 
     def add_profile(self, profile_name, profile_path=None, preferred_language=None):
         """
@@ -206,19 +261,18 @@ class EdgeProfileManager:
         profile_path = profile_data["profile_path"] if "profile_path" in profile_data else profile_data["path"]
 
         # Get the Edge User Data directory
-        import os
         user_data_dir = os.path.expandvars(r"%LOCALAPPDATA%\Microsoft\Edge\User Data")
-
-        if not os.path.exists(user_data_dir):
-            logger.warning(f"Edge User Data directory not found at: {user_data_dir}")
-            logger.warning("Using default User Data directory")
-        else:
-            logger.info(f"Using Edge User Data directory: {user_data_dir}")
 
         # Set up Edge options
         edge_options = Options()
         edge_options.add_argument(f"--user-data-dir={user_data_dir}")
         edge_options.add_argument(f"--profile-directory={profile_path}")
+        
+        # Add these options to prevent crashes
+        edge_options.add_argument("--no-sandbox")
+        edge_options.add_argument("--disable-dev-shm-usage")
+        edge_options.add_argument("--remote-debugging-port=0")
+        edge_options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
         # Add language preference if specified
         if profile_data.get("preferred_language"):
@@ -227,7 +281,7 @@ class EdgeProfileManager:
         try:
             # Launch Edge with the specified profile
             driver = webdriver.Edge(options=edge_options)
-
+            
             # Store the driver instance
             self.active_drivers[profile_name] = driver
 
@@ -353,6 +407,67 @@ class EdgeProfileManager:
         if profile_name:
             return self.history.get(profile_name, {})
         return self.history
+
+    def open_profiles_in_batches(self, profile_names, batch_size=5, delay_between_profiles=2, delay_between_batches=30, skip_missing=True):
+        """
+        Open multiple Edge profiles in batches to manage system resources better.
+
+        Args:
+            profile_names (list): List of profile names to open
+            batch_size (int): Number of profiles to open in each batch
+            delay_between_profiles (int): Delay in seconds between opening profiles within a batch
+            delay_between_batches (int): Delay in seconds between batches
+            skip_missing (bool): If True, will skip profiles that don't exist instead of raising an error
+
+        Returns:
+            dict: Dictionary containing successful and failed profile openings
+        """
+        results = {
+            "successful": [],
+            "failed": [],
+            "skipped": []
+        }
+
+        # Split profiles into batches
+        batches = [profile_names[i:i + batch_size] for i in range(0, len(profile_names), batch_size)]
+        
+        logger.info(f"Processing {len(profile_names)} profiles in {len(batches)} batches of {batch_size}")
+
+        for batch_num, batch in enumerate(batches, 1):
+            logger.info(f"Processing batch {batch_num}/{len(batches)} - Profiles: {batch}")
+            
+            # Process each profile in the current batch
+            for profile_name in batch:
+                if profile_name not in self.profiles:
+                    if skip_missing:
+                        logger.warning(f"Skipping non-existent profile: '{profile_name}'")
+                        results["skipped"].append(profile_name)
+                        continue
+                    else:
+                        logger.error(f"Profile '{profile_name}' does not exist")
+                        raise ValueError(f"Profile '{profile_name}' does not exist")
+
+                try:
+                    self.open_profile(profile_name)
+                    results["successful"].append(profile_name)
+                    logger.info(f"Successfully opened profile: {profile_name}")
+                    time.sleep(delay_between_profiles)
+                except Exception as e:
+                    logger.error(f"Failed to open profile '{profile_name}': {e}")
+                    results["failed"].append({"profile": profile_name, "error": str(e)})
+
+            # If this isn't the last batch, wait before processing the next batch
+            if batch_num < len(batches):
+                logger.info(f"Batch {batch_num} completed. Waiting {delay_between_batches} seconds before next batch...")
+                time.sleep(delay_between_batches)
+
+        # Log summary
+        logger.info("Batch processing completed:")
+        logger.info(f"- Successful: {len(results['successful'])}")
+        logger.info(f"- Failed: {len(results['failed'])}")
+        logger.info(f"- Skipped: {len(results['skipped'])}")
+
+        return results
 
 
 if __name__ == "__main__":

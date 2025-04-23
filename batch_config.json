@@ -1,0 +1,20 @@
+{
+    "batch1": {
+        "profiles": ["Personal", "Profile10"],
+        "batch_size": 2,
+        "profile_delay": 2,
+        "batch_delay": 30
+    },
+    "batch2": {
+        "profiles": ["Profile447", "Profile448", "Profile449", "Profile450"],
+        "batch_size": 2,
+        "profile_delay": 3,
+        "batch_delay": 40
+    },
+    "batch3": {
+        "profiles": ["Profile6", "Profile7", "Profile8", "Profile9", "Profile10"],
+        "batch_size": 3,
+        "profile_delay": 2,
+        "batch_delay": 35
+    }
+}

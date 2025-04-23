@@ -61,6 +61,42 @@ def main():
     # Close all profiles command
     close_parser = subparsers.add_parser("close-all", help="Close all open Edge profiles")
 
+    # Add batch processing command
+    batch_parser = subparsers.add_parser("open-batch", 
+        help="Open multiple profiles in batches to manage system resources")
+    batch_parser.add_argument("names", nargs="+", help="Profile names to open")
+    batch_parser.add_argument("--batch-size", type=int, default=5,
+                            help="Number of profiles to open in each batch")
+    batch_parser.add_argument("--profile-delay", type=int, default=2,
+                            help="Delay in seconds between opening profiles")
+    batch_parser.add_argument("--batch-delay", type=int, default=30,
+                            help="Delay in seconds between batches")
+    batch_parser.add_argument("--no-skip", action="store_true",
+                            help="If set, will raise an error when a profile doesn't exist")
+
+    # Add batch configuration commands
+    batch_config_parser = subparsers.add_parser("batch", help="Batch configuration commands")
+    batch_subparsers = batch_config_parser.add_subparsers(dest="batch_command")
+
+    # List batches
+    batch_subparsers.add_parser("list", help="List all configured batches")
+
+    # Add batch
+    add_batch_parser = batch_subparsers.add_parser("add", help="Add or update a batch configuration")
+    add_batch_parser.add_argument("name", help="Batch name")
+    add_batch_parser.add_argument("profiles", nargs="+", help="Profile names to include in batch")
+    add_batch_parser.add_argument("--batch-size", type=int, default=5)
+    add_batch_parser.add_argument("--profile-delay", type=int, default=2)
+    add_batch_parser.add_argument("--batch-delay", type=int, default=30)
+
+    # Remove batch
+    remove_batch_parser = batch_subparsers.add_parser("remove", help="Remove a batch configuration")
+    remove_batch_parser.add_argument("name", help="Batch name to remove")
+
+    # Run batch
+    run_batch_parser = batch_subparsers.add_parser("run", help="Run a configured batch")
+    run_batch_parser.add_argument("name", help="Batch name to run")
+
     # Parse arguments
     args = parser.parse_args()
 
@@ -178,6 +214,103 @@ def main():
     elif args.command == "close-all":
         count = manager.close_all_profiles()
         print(f"Closed {count} Edge browser instances")
+
+    elif args.command == "open-batch":
+        try:
+            print(f"Opening {len(args.names)} profiles in batches...")
+            print(f"Batch size: {args.batch_size}")
+            print(f"Delay between profiles: {args.profile_delay}s")
+            print(f"Delay between batches: {args.batch_delay}s")
+            
+            results = manager.open_profiles_in_batches(
+                args.names,
+                batch_size=args.batch_size,
+                delay_between_profiles=args.profile_delay,
+                delay_between_batches=args.batch_delay,
+                skip_missing=not args.no_skip
+            )
+
+            print("\nBatch processing completed:")
+            print(f"Successfully opened: {len(results['successful'])} profiles")
+            print(f"Failed to open: {len(results['failed'])} profiles")
+            print(f"Skipped: {len(results['skipped'])} profiles")
+
+            if results['failed']:
+                print("\nFailed profiles:")
+                for failure in results['failed']:
+                    print(f"- {failure['profile']}: {failure['error']}")
+
+            if results['successful']:
+                print("\nPress Ctrl+C to close all browsers and exit")
+                try:
+                    while True:
+                        time.sleep(1)
+                except KeyboardInterrupt:
+                    print("\nClosing all browsers...")
+                    manager.close_all_profiles()
+                    print("All browsers closed")
+
+        except Exception as e:
+            print(f"Error during batch processing: {e}")
+
+    elif args.command == "batch":
+        if args.batch_command == "list":
+            batches = manager.get_batch_names()
+            if batches:
+                print("Configured batches:")
+                for batch_name in batches:
+                    config = manager.batch_config[batch_name]
+                    print(f"\n{batch_name}:")
+                    print(f"  Profiles: {', '.join(config['profiles'])}")
+                    print(f"  Batch size: {config['batch_size']}")
+                    print(f"  Profile delay: {config['profile_delay']}s")
+                    print(f"  Batch delay: {config['batch_delay']}s")
+            else:
+                print("No batches configured")
+
+        elif args.batch_command == "add":
+            manager.add_batch(
+                args.name,
+                args.profiles,
+                args.batch_size,
+                args.profile_delay,
+                args.batch_delay
+            )
+            print(f"Batch '{args.name}' configured successfully")
+
+        elif args.batch_command == "remove":
+            if manager.remove_batch(args.name):
+                print(f"Batch '{args.name}' removed successfully")
+            else:
+                print(f"Batch '{args.name}' not found")
+
+        elif args.batch_command == "run":
+            try:
+                print(f"Running batch '{args.name}'...")
+                results = manager.run_batch(args.name)
+                
+                print("\nBatch processing completed:")
+                print(f"Successfully opened: {len(results['successful'])} profiles")
+                print(f"Failed to open: {len(results['failed'])} profiles")
+                print(f"Skipped: {len(results['skipped'])} profiles")
+
+                if results['failed']:
+                    print("\nFailed profiles:")
+                    for failure in results['failed']:
+                        print(f"- {failure['profile']}: {failure['error']}")
+
+                if results['successful']:
+                    print("\nPress Ctrl+C to close all browsers and exit")
+                    try:
+                        while True:
+                            time.sleep(1)
+                    except KeyboardInterrupt:
+                        print("\nClosing all browsers...")
+                        manager.close_all_profiles()
+                        print("All browsers closed")
+
+            except Exception as e:
+                print(f"Error running batch: {e}")
 
     else:
         parser.print_help()
